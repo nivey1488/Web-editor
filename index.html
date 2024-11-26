@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Code Editor - NiveySoftware</title>
+    <!-- CodeMirror CSS -->
+	<link rel="icon" type="image/png" href="logo.png">
+	<link rel="apple-touch-icon" href="logo.png">
+	<link rel="shortcut icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="matrix-bg"></canvas>
+    
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="logo.png" alt="NiveySoftware Logo" class="logo">
+            </div>
+            <div class="title-container">
+                <h1>Web Code Editor</h1>
+                <div class="company-info">
+                    <p>Created by NiveySoftware</p>
+                    <a href="https://github.com/nivey1488" target="_blank" class="github-link">
+                        <svg height="24" width="24" viewBox="0 0 16 16" class="github-icon">
+                            <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+	
+	<div class="template-selector">
+    <button class="template-btn" data-template="clock">
+        <span class="template-icon">⏰</span>
+        Часы
+    </button>
+    <button class="template-btn" data-template="calculator">
+        <span class="template-icon">🔢</span>
+        Калькулятор
+    </button>
+    <button class="template-btn" data-template="gallery">
+        <span class="template-icon">🖼️</span>
+        Галерея
+    </button>
+</div>
+
+
+    <div class="container">
+        <div class="editors">
+            <div class="editor">
+                <div class="editor-header">
+                    <span class="language-icon">&#60;/&#62;</span>
+                    HTML
+                </div>
+                <textarea id="html-editor"></textarea>
+            </div>
+            <div class="editor">
+                <div class="editor-header">
+                    <span class="language-icon">{}</span>
+                    CSS
+                </div>
+                <textarea id="css-editor"></textarea>
+            </div>
+            <div class="editor">
+                <div class="editor-header">
+                    <span class="language-icon">()</span>
+                    JavaScript
+                </div>
+                <textarea id="js-editor"></textarea>
+            </div>
+            <button id="run-btn">
+                <span class="button-icon">▶</span>
+                Запустить
+            </button>
+        </div>
+        <div class="preview">
+            <div class="preview-header">Результат</div>
+            <iframe id="output"></iframe>
+        </div>
+    </div>
+
+    <!-- CodeMirror Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/htmlmixed/htmlmixed.min.js"></script>
+    
+    <script src="matrix.js"></script>
+    <script src="editor.js"></script>
+</body>
+</html>
