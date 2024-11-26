@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Code Editor</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="matrix-bg"></canvas>
+    
+    <header>
+        <h1>Web Code Editor</h1>
+    </header>
+
+    <div class="container">
+        <div class="editors">
+            <div class="editor">
+                <div class="editor-header">
+                    <span class="language-icon">&#60;/&#62;</span>
+                    HTML
+                </div>
+                <textarea id="html-code" placeholder="Введите HTML код..."></textarea>
+                <pre><code class="language-html" id="html-highlight"></code></pre>
+            </div>
+            <div class="editor">
+                <div class="editor-header">
+                    <span class="language-icon">{}</span>
+                    CSS
+                </div>
+                <textarea id="css-code" placeholder="Введите CSS код..."></textarea>
+                <pre><code class="language-css" id="css-highlight"></code></pre>
+            </div>
+            <div class="editor">
+                <div class="editor-header">
+                    <span class="language-icon">()</span>
+                    JavaScript
+                </div>
+                <textarea id="js-code" placeholder="Введите JavaScript код..."></textarea>
+                <pre><code class="language-javascript" id="js-highlight"></code></pre>
+            </div>
+            <button onclick="compile()">
+                <span class="button-icon">▶</span>
+                Запустить
+            </button>
+        </div>
+        <div class="preview">
+            <div class="preview-header">Результат</div>
+            <iframe id="output"></iframe>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-markup.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-javascript.min.js"></script>
+    <script src="matrix.js"></script>
+    <script src="editor.js"></script>
+</body>
+</html>
